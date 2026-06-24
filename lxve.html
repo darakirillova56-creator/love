@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для тебя ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9ecf, #cda4ff);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+}
+
+h1 {
+    color: #ff4f9a;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    background: #ff4f9a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>❤️ Для моего любимого ❤️</h1>
+
+    <p>
+        Спасибо тебе за все моменты, которые мы прожили вместе.<br
+      Ты делаешь мои дни ярче, а улыбку — искреннее.<br
+
+       Я люблю тебя сильнее с каждым днем и очень ценю,
+        что ты есть в моей жизни. 💜
+    </p>
+
+    <button onclick="loveMessage()">
+        Нажми сюда 🥺
+    </button>
+</div>
+
+<script>
+function loveMessage() {
+    alert("Я люблю тебя бесконечно ❤️");
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💜";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
